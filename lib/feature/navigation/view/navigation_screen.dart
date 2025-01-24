@@ -35,7 +35,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       //backgroundColor: Color(0xffF5F5F5),
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Python Developer Community", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),),
+        title: Text("QuickBook Hotel", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),

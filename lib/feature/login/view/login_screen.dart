@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel_management/core/validation/validation.dart';
+import 'package:hotel_management/feature/navigation/view/navigation_screen.dart';
 import 'package:hotel_management/shared/text_field/custom_password_field.dart';
 import 'package:hotel_management/shared/text_field/custom_text_field.dart';
 import 'package:hotel_management/shared/utils/toast.dart';
@@ -95,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (isEmail && isPassword){
 
                       await authServer.signInWIthEmailPassword(email, password);
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigationScreen()));
                       Toast.showToast(context: context, message: "Login Successfully", isWarning: false);
                     } else {
                       Toast.showToast(context: context, message: "Invalid Input", isWarning: true);

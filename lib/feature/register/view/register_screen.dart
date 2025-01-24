@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/feature/login/view/login_screen.dart';
 import 'package:hotel_management/feature/navigation/view/navigation_screen.dart';
 import 'package:hotel_management/shared/text_field/custom_password_field.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../core/service/authenticate_service.dart';
 import '../../../core/validation/validation.dart';
@@ -87,7 +88,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       await authServer.signUpWIthEmailPassword(
                           _email, _password
                       );
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
+                      await Supabase.instance.client.from('users').insert({'name': _name, 'email' : _email, 'phone' : _phone, 'img_url' : ""});
+
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NavigationScreen()));
                       Toast.showToast(context: context, message: "Account Created Successfully", isWarning: false);
                     } else {
                       Toast.showToast(context: context, message: "Invalid Input", isWarning: true);
