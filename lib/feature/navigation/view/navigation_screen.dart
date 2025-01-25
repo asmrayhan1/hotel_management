@@ -20,7 +20,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
     });
   }
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetOptions = <Widget> [
     HomeScreen(),
     ProfileScreen()
   ];
